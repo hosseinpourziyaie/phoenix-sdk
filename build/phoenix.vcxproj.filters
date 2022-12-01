@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Developer">
+      <UniqueIdentifier>{8BB2F587-F71C-AAFE-405B-5BA4AC048853}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX">
+      <UniqueIdentifier>{D86A6D73-444A-EC0E-4D62-77E5B9C05270}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{DBC7D3B0-C769-FE86-B024-12DB9C6585D7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{953A660D-014F-8EBE-CAD0-311E36A48AEF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Loader">
+      <UniqueIdentifier>{1C9C36C1-083E-6197-F1F8-74EBDD39E8E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{4AF3887C-362A-8A0D-DF16-7010CB2C060F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{010A8043-6D74-34BA-B6B2-E55F225C120F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\source\Developer\debug_helper.hpp">
+      <Filter>Developer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Developer\dev_console.hpp">
+      <Filter>Developer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\DirectX\dx11_hook.hpp">
+      <Filter>DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\DirectX\dx12_hook.hpp">
+      <Filter>DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\DirectX\imgui_core.hpp">
+      <Filter>DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Engine\dvar_helper.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Engine\engine_hq.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Engine\iw_engine.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Input\KeyCatcher.hpp">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Input\input_hook.hpp">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Loader\component_interface.hpp">
+      <Filter>Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Loader\component_loader.hpp">
+      <Filter>Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Main\definitions.hpp">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Main\imgui_font.hpp">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Main\std_include.hpp">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Utilities\common.hpp">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Utilities\concurrency.hpp">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Utilities\hook.hpp">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Utilities\io.hpp">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Utilities\memory.hpp">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Utilities\nt.hpp">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Utilities\pattern.hpp">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Utilities\string.hpp">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\source\Developer\debug_helper.cpp">
+      <Filter>Developer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Developer\dev_console.cpp">
+      <Filter>Developer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\DirectX\dx11_hook.cpp">
+      <Filter>DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\DirectX\dx12_hook.cpp">
+      <Filter>DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\DirectX\imgui_core.cpp">
+      <Filter>DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Engine\dvar_helper.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Engine\engine_hq.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Engine\iw_engine.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Input\KeyCatcher.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Input\input_hook.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Loader\component_loader.cpp">
+      <Filter>Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Main\main_entry.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Main\std_include.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Test-Component.cpp" />
+    <ClCompile Include="..\source\Utilities\common.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Utilities\hook.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Utilities\io.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Utilities\memory.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Utilities\nt.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Utilities\pattern.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Utilities\string.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
