@@ -239,10 +239,6 @@ namespace IW
 			loaded_engine_handler.cmd_exec = Cmd_ExecuteText;
 			loaded_engine_handler.dvar_info = Dvar_FetchInformation;
 		}
-		else
-		{
-			throw std::runtime_error("UNSUPPORTED GAME VERSION (S1MP 1.22)");
-		}
 
 		insert_common_iw_console_suggestions();
 	}
@@ -272,10 +268,6 @@ namespace IW
 			loaded_engine_handler.cmd_exec = Cmd_ExecuteText;
 			loaded_engine_handler.dvar_info = Dvar_FetchInformation;
 		}
-		else
-		{
-			throw std::runtime_error("UNSUPPORTED GAME VERSION (S2MP 1.25)");
-		}
 
 		insert_common_iw_console_suggestions();
 	}
@@ -304,10 +296,6 @@ namespace IW
 			loaded_engine_handler.engine_type = ENGINE_S2;
 			loaded_engine_handler.cmd_exec = Cmd_ExecuteText;
 			loaded_engine_handler.dvar_info = Dvar_FetchInformation;
-		}
-		else
-		{
-			throw std::runtime_error("UNSUPPORTED GAME VERSION (S2SP 1.25)");
 		}
 
 		insert_common_iw_console_suggestions();

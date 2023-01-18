@@ -8,8 +8,10 @@
 
 #include <map>
 #include <queue>
+#include <string>
 #include <vector>
 #include <fstream>
+#include <iomanip>
 #include <functional>
 
 #include <MinHook.h>
