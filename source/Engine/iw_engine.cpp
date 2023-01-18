@@ -223,13 +223,15 @@ namespace IW
 			UI_FormattedBuildNumber = (UI_FormattedBuildNumber_t)build_info_func;
 		}
 
-		if (*(DWORD*)(0x3A1C20_b + 1) == 0x218214) // [S1_MP64_SHIP 1.22.2195988]
+		if (*(DWORD*)(0x3A1C20_b + 1) == 0x218214)                                // [S1MP64 1.22.2195988]
 		{
 			Sys_EnterCriticalSection = (Sys_EnterCriticalSection_t)0x1404CCFE0;   // [S1MP64 1.22.2195988]
 			Sys_LeaveCriticalSection = (Sys_LeaveCriticalSection_t)0x1404CD050;   // [S1MP64 1.22.2195988]
 
-			cmd_textArray = (CmdText*)0x1479F6CB8;  CRITSECT_CBUF_NUMBER = 71;    // [S1MP64 1.22.2195988]
+			cmd_textArray = (CmdText*)0x1479F6CB8;                                // [S1MP64 1.22.2195988]
 			cmd_functions = (CmdFunc**)0x1479ECC58;                               // [S1MP64 1.22.2195988]
+
+			CRITSECT_CBUF_NUMBER = 71;                                            // [S1MP64 1.22.2195988]
 
 			Dvar_FindVar = (Dvar_FindVar_t)0x1404BF8B0;                           // [S1MP64 1.22.2195988]
 
@@ -237,11 +239,15 @@ namespace IW
 			loaded_engine_handler.cmd_exec = Cmd_ExecuteText;
 			loaded_engine_handler.dvar_info = Dvar_FetchInformation;
 		}
+		else
+		{
+			throw std::runtime_error("UNSUPPORTED GAME VERSION (S1MP 1.22)");
+		}
 
 		insert_common_iw_console_suggestions();
 	}
 
-	void initialize_s2()
+	void initialize_s2mp()
 	{
 		auto build_info_func = utils::pattern::ps_find_idastyle("48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 40 33 C9", main_module_info.base, main_module_info.size);
 		if (build_info_func)
@@ -249,13 +255,15 @@ namespace IW
 			UI_FormattedBuildNumber = (UI_FormattedBuildNumber_t)build_info_func;
 		}
 
-		if (*(DWORD*)(0x6A1EE0_b + 1) == 0x224149) // [S2_MP64_SHIP 1.25.2244937]
-		{		
+		if (*(DWORD*)(0x6A1EE0_b + 1) == 0x224149)                               // [S2MP64 1.25.2244937]
+		{
 			Sys_EnterCriticalSection = (Sys_EnterCriticalSection_t)0x7D7B50_b;   // [S2MP64 1.25.2244937]
 			Sys_LeaveCriticalSection = (Sys_LeaveCriticalSection_t)0x7D7BC0_b;   // [S2MP64 1.25.2244937]
 
-			cmd_textArray = (CmdText*)0xAC674B8_b; CRITSECT_CBUF_NUMBER = 193;   // [S2MP64 1.25.2244937]
+			cmd_textArray = (CmdText*)0xAC674B8_b;                               // [S2MP64 1.25.2244937]
 			cmd_functions = (CmdFunc**)0xAC672D8_b;                              // [S2MP64 1.25.2244937]
+
+			CRITSECT_CBUF_NUMBER = 193;                                          // [S2MP64 1.25.2244937]
 
 			Dvar_FindVar = (Dvar_FindVar_t)0x109C30_b;                           // [S2MP64 1.25.2244937]
 			Dvar_ValueToString = (Dvar_ValueToString_t)0x1194D0_b;               // [S2MP64 1.25.2244937]
@@ -263,6 +271,10 @@ namespace IW
 			loaded_engine_handler.engine_type = ENGINE_S2;
 			loaded_engine_handler.cmd_exec = Cmd_ExecuteText;
 			loaded_engine_handler.dvar_info = Dvar_FetchInformation;
+		}
+		else
+		{
+			throw std::runtime_error("UNSUPPORTED GAME VERSION (S2MP 1.25)");
 		}
 
 		insert_common_iw_console_suggestions();
@@ -276,13 +288,15 @@ namespace IW
 			UI_FormattedBuildNumber = (UI_FormattedBuildNumber_t)build_info_func;
 		}
 
-		if (*(DWORD*)(0x46F590_b + 1) == 0x224149) // [S2_SP64_SHIP 1.25.2244937]
+		if (*(DWORD*)(0x46F590_b + 1) == 0x224149)                               // [S2SP64 1.25.2244937]
 		{
 			Sys_EnterCriticalSection = (Sys_EnterCriticalSection_t)0x5369A0_b;   // [S2SP64 1.25.2244937]
 			Sys_LeaveCriticalSection = (Sys_LeaveCriticalSection_t)0x536A10_b;   // [S2SP64 1.25.2244937]
 
-			cmd_textArray = (CmdText*)0x98DFDB8_b; CRITSECT_CBUF_NUMBER = 193;   // [S2SP64 1.25.2244937]
+			cmd_textArray = (CmdText*)0x98DFDB8_b;                               // [S2SP64 1.25.2244937]
 			cmd_functions = (CmdFunc**)0x98DFBD8_b;                              // [S2SP64 1.25.2244937]
+
+			CRITSECT_CBUF_NUMBER = 193;                                          // [S2SP64 1.25.2244937]
 
 			Dvar_FindVar = (Dvar_FindVar_t)0x520AB0_b;                           // [S2SP64 1.25.2244937]
 			Dvar_ValueToString = (Dvar_ValueToString_t)0x52FD80_b;               // [S2SP64 1.25.2244937]
@@ -290,6 +304,10 @@ namespace IW
 			loaded_engine_handler.engine_type = ENGINE_S2;
 			loaded_engine_handler.cmd_exec = Cmd_ExecuteText;
 			loaded_engine_handler.dvar_info = Dvar_FetchInformation;
+		}
+		else
+		{
+			throw std::runtime_error("UNSUPPORTED GAME VERSION (S2SP 1.25)");
 		}
 
 		insert_common_iw_console_suggestions();
@@ -303,7 +321,7 @@ namespace IW
 			supported_games.insert({ "s1_mp64_ship.exe", initialize_s1 });
 			supported_games.insert({ "s1_sp64_ship.exe", initialize_s1 });
 
-			supported_games.insert({ "s2_mp64_ship.exe", initialize_s2 });
+			supported_games.insert({ "s2_mp64_ship.exe", initialize_s2mp });
 			supported_games.insert({ "s2_sp64_ship.exe", initialize_s2sp });
 
 
