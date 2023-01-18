@@ -268,6 +268,33 @@ namespace IW
 		insert_common_iw_console_suggestions();
 	}
 
+	void initialize_s2sp()
+	{
+		auto build_info_func = utils::pattern::ps_find_idastyle("48 89 5C 24 10 57 48 83 EC ? 33 C9 E8 ? ? ? ? 33 C9", main_module_info.base, main_module_info.size);
+		if (build_info_func)
+		{
+			UI_FormattedBuildNumber = (UI_FormattedBuildNumber_t)build_info_func;
+		}
+
+		if (*(DWORD*)(0x46F590_b + 1) == 0x224149) // [S2_SP64_SHIP 1.25.2244937]
+		{
+			Sys_EnterCriticalSection = (Sys_EnterCriticalSection_t)0x5369A0_b;   // [S2SP64 1.25.2244937]
+			Sys_LeaveCriticalSection = (Sys_LeaveCriticalSection_t)0x536A10_b;   // [S2SP64 1.25.2244937]
+
+			cmd_textArray = (CmdText*)0x98DFDB8_b; CRITSECT_CBUF_NUMBER = 193;   // [S2SP64 1.25.2244937]
+			cmd_functions = (CmdFunc**)0x98DFBD8_b;                              // [S2SP64 1.25.2244937]
+
+			Dvar_FindVar = (Dvar_FindVar_t)0x520AB0_b;                           // [S2SP64 1.25.2244937]
+			Dvar_ValueToString = (Dvar_ValueToString_t)0x52FD80_b;               // [S2SP64 1.25.2244937]
+
+			loaded_engine_handler.engine_type = ENGINE_S2;
+			loaded_engine_handler.cmd_exec = Cmd_ExecuteText;
+			loaded_engine_handler.dvar_info = Dvar_FetchInformation;
+		}
+
+		insert_common_iw_console_suggestions();
+	}
+
 	class component final : public component_interface
 	{
 	public:
@@ -277,7 +304,7 @@ namespace IW
 			supported_games.insert({ "s1_sp64_ship.exe", initialize_s1 });
 
 			supported_games.insert({ "s2_mp64_ship.exe", initialize_s2 });
-			supported_games.insert({ "s2_sp64_ship.exe", initialize_s2 });
+			supported_games.insert({ "s2_sp64_ship.exe", initialize_s2sp });
 
 
 			insert_phoenix_cmd("cmdlist", "dump list of engine commands using itteration of cmd_functions", dump_cmdlist_f);
